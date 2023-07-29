@@ -1,0 +1,80 @@
+examples/glib-datatypes.c:68:5: portability: %lu in format string (no. 1) requires 'unsigned long' but the argument type is 'size_t {aka unsigned long}'. [invalidPrintfArgType_uint]
+    printf(" len=\"%lu\">", strlen(str->data));
+    ^
+examples/glib-datatypes.c:90:5: portability: %lu in format string (no. 1) requires 'unsigned long' but the argument type is 'size_t {aka unsigned long}'. [invalidPrintfArgType_uint]
+    printf("<KEY len=\"%lu\"", strlen((char*)key+1));
+    ^
+examples/glib-datatypes.c:131:5: portability: %lu in format string (no. 4) requires 'unsigned long' but the argument type is 'size_t {aka unsigned long}'. [invalidPrintfArgType_uint]
+    printf("L%d %c%-10s @%lu\n",
+    ^
+jsonsl.c:635:28: style: Variable 'jsn->expecting' is reassigned a value before the old one has been used. [redundantAssignment]
+            jsn->expecting = '"';
+                           ^
+jsonsl.c:629:32: note: jsn->expecting is assigned
+                jsn->expecting = '"';
+                               ^
+jsonsl.c:635:28: note: jsn->expecting is overwritten
+            jsn->expecting = '"';
+                           ^
+jsonsl.c:1188:12: style: The scope of the variable 'jmp_cur' can be reduced. [variableScope]
+    size_t jmp_cur, ii, ourjmpidx;
+           ^
+jsonsl.c:758:42: style:inconclusive: Function 'jsonsl_strtype' argument 1 names different: declaration 'jt' definition 'type'. [funcArgNamesDifferent]
+const char *jsonsl_strtype(jsonsl_type_t type)
+                                         ^
+jsonsl.h:679:42: note: Function 'jsonsl_strtype' argument 1 names different: declaration 'jt' definition 'type'.
+const char* jsonsl_strtype(jsonsl_type_t jt);
+                                         ^
+jsonsl.c:758:42: note: Function 'jsonsl_strtype' argument 1 names different: declaration 'jt' definition 'type'.
+const char *jsonsl_strtype(jsonsl_type_t type)
+                                         ^
+perf/bench.c:75:5: portability: %lu in format string (no. 1) requires 'unsigned long' but the argument type is 'size_t {aka unsigned long}'. [invalidPrintfArgType_uint]
+    fprintf(stderr, "SPEED: %lu MB/sec\n", total_size/duration);
+    ^
+tests/api_test.c:61:9: style: The scope of the variable 'formatted_len' can be reduced. [variableScope]
+    int formatted_len;
+        ^
+tests/cliopts.c:310:17: style: Suspicious condition (assignment + comparison); Clarify expression with parentheses. [clarifyCondition]
+                (optlen = strlen(cur->klong) != klen) ||
+                ^
+tests/cliopts.c:111:9: warning: sscanf() without field width limits can crash with huge input data. [invalidscanf]
+    if (sscanf(s, "%f%s", &value, dummy_buf) != 1) {
+        ^
+tests/json_test.c:156:9: warning: Return value of function freopen() is not used. [ignoredReturnValue]
+        freopen(DEVNULL, "w", stdout);
+        ^
+tests/jpr_test.c:176:9: warning: Return value of function freopen() is not used. [ignoredReturnValue]
+        freopen("/dev/null", "w", stdout);
+        ^
+tests/jpr_test.c:41:9: portability: %lu in format string (no. 1) requires 'unsigned long' but the argument type is 'size_t {aka unsigned long}'. [invalidPrintfArgType_uint]
+        printf("[%lu]: ", ii);
+        ^
+tests/jpr_test.c:78:5: warning: %d in format string (no. 3) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+    fprintf(stderr, "=== Match jpr=%-15s parent(type=%s,level=%d)",
+    ^
+tests/jpr_test.c:84:9: portability: %lu in format string (no. 1) requires 'unsigned long' but the argument type is 'size_t {aka unsigned long}'. [invalidPrintfArgType_uint]
+        fprintf(stderr, " idx=%lu", nkey);
+        ^
+tests/jpr_test.c:119:14: style: Variable 'matchjpr' is assigned a value that is never used. [unreadVariable]
+    matchjpr = jsonsl_jpr_match_state(jsn, state,
+             ^
+tests/cliopts.c:473:0: style: The function 'cliopts_parse_options' is never used. [unusedFunction]
+
+^
+tests/json_test.c:12:0: style: The function 'fmt_level' is never used. [unusedFunction]
+
+^
+jsonsl.c:1150:0: style: The function 'jsonsl_jpr_match_state_cleanup' is never used. [unusedFunction]
+
+^
+tests/jpr_test.c:172:0: style: The function 'jsonsl_test_jpr' is never used. [unusedFunction]
+
+^
+tests/json_test.c:152:0: style: The function 'jsonsl_test_json' is never used. [unusedFunction]
+
+^
+tests/unescape.c:173:0: style: The function 'jsonsl_test_unescape' is never used. [unusedFunction]
+
+^
+nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingInclude]
+
